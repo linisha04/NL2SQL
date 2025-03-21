@@ -1,3 +1,43 @@
+CPI Data Loader 
+
+Prerequisites
+
+Install PostgreSQL and ensure it is running.
+
+Install required Python packages:
+
+pip install psycopg2 pandas
+
+Setup & Configuration
+
+Update database credentials in the script:
+
+hostname = "localhost"
+database = "final"
+username = "postgres"  # Change if needed
+password = "admin"      # Change if needed
+port_id = 5432
+
+Ensure the CSV file (cpi group data.csv) is in the same directory as the script.
+
+Running the Script
+
+Execute the script to load data into the database:
+
+python3 cpi_data_loader.py
+
+Functionality
+
+Reads and cleans CPI data from cpi group data.csv.
+
+Maps month names to numeric values.
+
+Replaces missing values (*) with 0.
+
+Creates cpi_data table if it doesn’t exist.
+
+Inserts unique records into PostgreSQL.
+
 # FastAPI SQL Agent
 
 ## Overview
