@@ -1,7 +1,7 @@
 # CPI Data Loader - README
 
 ## Prerequisites
-1. Install PostgreSQL and ensure it is running.
+1. Install PostgreSQL and ensure it is running, use data_loader_requirements.txt
 2. Install required Python packages:
    ```bash
    pip install psycopg2 pandas
