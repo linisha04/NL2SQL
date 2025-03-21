@@ -31,3 +31,10 @@ This FastAPI application serves as an intelligent SQL agent that processes natur
    uvicorn cpi:app --reload
    ```
 
+
+API Documentation
+
+After running the server, access the API documentation at:
+
+Swagger UI: http://127.0.0.1:8000/docs
+
