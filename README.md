@@ -1,42 +1,42 @@
-CPI Data Loader 
+# CPI Data Loader - README
 
-Prerequisites
+## Prerequisites
+1. Install PostgreSQL and ensure it is running.
+2. Install required Python packages:
+   ```bash
+   pip install psycopg2 pandas
+   ```
 
-Install PostgreSQL and ensure it is running.
+## Setup & Configuration
+1. Update database credentials in the script:
+   ```python
+   hostname = "localhost"
+   database = "final"  # Change it as per your database name
+   username = "postgres"  # Change it , write your username
+   password = "admin"      # Change it , enter your password
+   port_id = 5432
+   ```
+2. Ensure the CSV file (`cpi group data.csv`) is in the same directory as the script.
 
-Install required Python packages:
-
-pip install psycopg2 pandas
-
-Setup & Configuration
-
-Update database credentials in the script:
-
-hostname = "localhost"
-database = "final"
-username = "postgres"  # Change if needed
-password = "admin"      # Change if needed
-port_id = 5432
-
-Ensure the CSV file (cpi group data.csv) is in the same directory as the script.
-
-Running the Script
-
+## Running the Script
 Execute the script to load data into the database:
+```bash
+python cpi_data_loader.py
+```
 
-python3 cpi_data_loader.py
+## Functionality
+- Reads and cleans CPI data from `cpi group data.csv`.
+- Maps month names to numeric values.
+- Replaces missing values (`*`) with `0`.
+- Creates `cpi_data` table if it doesn’t exist.
+- Inserts unique records into PostgreSQL.
 
-Functionality
+## Troubleshooting
+- Ensure PostgreSQL is running and credentials are correct.
+- Verify the CSV file exists and has the correct structure.
 
-Reads and cleans CPI data from cpi group data.csv.
 
-Maps month names to numeric values.
 
-Replaces missing values (*) with 0.
-
-Creates cpi_data table if it doesn’t exist.
-
-Inserts unique records into PostgreSQL.
 
 # FastAPI SQL Agent
 
