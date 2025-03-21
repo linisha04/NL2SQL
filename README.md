@@ -21,7 +21,7 @@
 ## Running the Script
 Execute the script to load data into the database:
 ```bash
-python cpi_data_loader.py
+python3 cpi_data_loader.py
 ```
 
 ## Functionality
