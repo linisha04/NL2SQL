@@ -57,24 +57,57 @@ This FastAPI application serves as an intelligent SQL agent that processes natur
 - PostgreSQL
 - dotenv (for environment variable management)
 
+
 ## Installation & Setup
-1. Clone the repository.
-2. Install dependencies:
-   ```sh
-   pip install fastapi google-generativeai langchain-community python-dotenv
-   ```
-3. Set up environment variables:
-   - `GOOGLE_API_KEY`
-   - `ACQ_API_KEY`
-4. Run the API:
-   ```sh
-   uvicorn cpi:app --reload
-   ```
+### 1. Clone the Repository
+```sh
+git clone <repository_url>
+cd <repository_name>
+```
 
+### 2. Create a Virtual Environment (Optional but Recommended)
+```sh
+python -m venv venv
+source venv/bin/activate  # On macOS/Linux
+venv\Scripts\activate  # On Windows
+```
 
-API Documentation
+### 3. Install Dependencies
+```sh
+pip install -r requirements.txt
+```
+If `requirements.txt` is unavailable, install dependencies manually:
+```sh
+pip install fastapi google-generativeai langchain-community python-dotenv uvicorn psycopg2-binary
+```
 
+### 4. Set Up Environment Variables
+Create a `.env` file in the project root and add the following variables:
+```
+GOOGLE_API_KEY=your_google_api_key
+ACQ_API_KEY=your_api_key
+
+And database uri wrt to your username , password in cpi.py file
+
+DATABASE_URL=postgresql://user:password@host:port/database
+```
+Replace `your_google_api_key`, `your_api_key`, and `DATABASE_URL` with your actual credentials.
+
+### 5. Run the API
+Use Uvicorn to start the FastAPI server:
+```sh
+uvicorn cpi:app --reload
+```
+
+## API Documentation
 After running the server, access the API documentation at:
+- **Swagger UI**: [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)
 
-Swagger UI: http://127.0.0.1:8000/docs
+
+## Troubleshooting
+- Ensure PostgreSQL is running and accessible using the provided `DATABASE_URL`.
+- Check `.env` file formatting and variable values.
+- If `psycopg2` installation fails, try `pip install psycopg2-binary`.
+
+
 
