@@ -87,7 +87,7 @@ Create a `.env` file in the project root and add the following variables:
 GOOGLE_API_KEY=your_google_api_key
 ACQ_API_KEY=your_api_key
 
-And database uri wrt to your username , password in cpi.py file
+change database uri wrt to your username , password in cpi.py file.
 
 DATABASE_URL=postgresql://user:password@host:port/database
 ```
